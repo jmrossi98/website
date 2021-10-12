@@ -65,6 +65,7 @@ export const NavLogo = styled(Link)`
     color: #000000;
   }
   font-size: 250%;
+  font-weight: bold;
 `;
 
 export const Bars = styled(FaBars)`
