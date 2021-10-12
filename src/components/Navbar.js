@@ -7,7 +7,7 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLogo to='/'>
-          Jakob Rossi
+         Jakob Rossi
         </NavLogo>
         <Bars />
         <NavMenu>
@@ -17,7 +17,7 @@ const Navbar = () => {
           <NavLink to='/' activeStyle>
             Projects
           </NavLink>
-          <NavLink to='/' activeStyle>
+          <NavLink to='/resume' activeStyle>
             Resume
           </NavLink>
           <NavLink to='/' activeStyle>
@@ -34,7 +34,7 @@ export const Nav = styled.nav`
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 0.2rem calc((55vw - 1000px) / 2);
+  padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
   /* Third Nav */
   /* justify-content: flex-start; */
@@ -58,7 +58,7 @@ export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0px 0px;
   height: 100%;
   cursor: pointer;
   &.active {
