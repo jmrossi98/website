@@ -38,7 +38,7 @@ export const Nav = styled.nav`
   background: #a5dcf4;
   display: flex;
   justify-content: space-between;
-  padding: 50px 120px;
+  padding: 20px 120px;
   z-index: 0;
   /* Third Nav */
   /* justify-content: flex-start; */

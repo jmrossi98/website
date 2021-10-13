@@ -8,14 +8,14 @@ const Home = () => {
         display: 'flex',
         justifyContent: 'Center',
         alignItems: 'Center',
-        padding: "90px 230px"
+        padding: "220px 230px"
       }}>
         <div>
           <img src={pic} alt="That's me" style={{
             display: 'flex',
             justifyContent: 'Center',
             alignItems: 'Center',
-            padding: "20px 60px"
+            padding: "0px 90px"
           }}>
           </img>
 
@@ -27,7 +27,7 @@ const Home = () => {
             alignItems: 'Center',
             fontSize: '200%',
             width: '700px',
-            padding: '0px 45px',
+            padding: '0px 25px',
             fontWeight: 'bold',
             fontFamily: "ＭＳ Ｐゴシック"
           }}>
