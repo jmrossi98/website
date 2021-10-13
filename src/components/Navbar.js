@@ -1,6 +1,7 @@
 import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { SocialIcon } from 'react-social-icons';
 
 const Navbar = () => {
   return (
@@ -11,18 +12,22 @@ const Navbar = () => {
         </NavLogo>
         <Bars />
         <NavMenu>
-          <NavLink to='/' activeStyle>
-            About
-          </NavLink>
-          <NavLink to='/' activeStyle>
+          <NavLink to='/projects' activeStyle>
             Projects
           </NavLink>
           <NavLink to='/resume' activeStyle>
             Resume
           </NavLink>
-          <NavLink to='/' activeStyle>
+          <NavLink to='/contact' activeStyle>
             Contact
           </NavLink>
+          <NavLink to='/' activeStyle>
+          </NavLink>
+            <SocialIcon url="https://github.com/jmrossi98" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
+            <SocialIcon url="https://linkedin.com/in/jakob-rossi" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
+            <SocialIcon url="https://www.facebook.com/jakob.rossi" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
+            <SocialIcon url="https://www.instagram.com/jay_crossin" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
+            <SocialIcon url="https://twitter.com/jay_crossin" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
         </NavMenu>
       </Nav>
     </>
@@ -31,11 +36,10 @@ const Navbar = () => {
 
 export const Nav = styled.nav`
   background: #a5dcf4;
-  height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
+  padding: 30px 250px;
+  z-index: 0;
   /* Third Nav */
   /* justify-content: flex-start; */
 `;
@@ -58,13 +62,13 @@ export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0px 0px;
   height: 100%;
   cursor: pointer;
   &.active {
     color: #000000;
   }
-  font-size: 250%;
+  font-size: 350%;
+  font-family: 'Papyrus', monospace;
   font-weight: bold;
 `;
 
@@ -111,7 +115,6 @@ export const NavBtn = styled.nav`
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
   background: #808080;
-  padding: 5px 15px;
   color: #000000;
   outline: none;
   border: none;
@@ -119,7 +122,6 @@ export const NavBtnLink = styled(Link)`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   /* Second Nav */
-  margin-left: 50px;
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
