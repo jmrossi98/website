@@ -8,14 +8,14 @@ const Home = () => {
         display: 'flex',
         justifyContent: 'Center',
         alignItems: 'Center',
-        padding: "90px 250px"
+        padding: "90px 230px"
       }}>
         <div>
           <img src={pic} alt="That's me" style={{
             display: 'flex',
             justifyContent: 'Center',
             alignItems: 'Center',
-            padding: "20px 100px"
+            padding: "20px 60px"
           }}>
           </img>
 
@@ -27,8 +27,9 @@ const Home = () => {
             alignItems: 'Center',
             fontSize: '200%',
             width: '700px',
-            padding: '10px 140px',
-            fontWeight: 'bold'
+            padding: '0px 45px',
+            fontWeight: 'bold',
+            fontFamily: "ＭＳ Ｐゴシック"
           }}>
             Hi, I'm Jakob! Welcome to my website.<br></br><br></br>
             I'm a Software Engineer based in Rochester, NY. I'm passionate about learning new skills and developing useful software.<br></br><br></br>

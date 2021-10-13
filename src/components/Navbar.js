@@ -38,7 +38,7 @@ export const Nav = styled.nav`
   background: #a5dcf4;
   display: flex;
   justify-content: space-between;
-  padding: 30px 250px;
+  padding: 50px 120px;
   z-index: 0;
   /* Third Nav */
   /* justify-content: flex-start; */
@@ -55,6 +55,8 @@ export const NavLink = styled(Link)`
   &.active {
     color: #000000;
   }
+  font-size: 150%;
+  font-family: "ＭＳ Ｐゴシック";
 `;
 
 export const NavLogo = styled(Link)`
@@ -68,8 +70,9 @@ export const NavLogo = styled(Link)`
     color: #000000;
   }
   font-size: 350%;
-  font-family: 'Papyrus', monospace;
   font-weight: bold;
+  font-smooth: never;
+  font-family: "ＭＳ Ｐゴシック";
 `;
 
 export const Bars = styled(FaBars)`
