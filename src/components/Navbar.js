@@ -8,10 +8,13 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLogo to='/'>
-         Jakob Rossi
+        Jakob Rossi
         </NavLogo>
         <Bars />
         <NavMenu>
+          <NavLink to='/about' activeStyle>
+            About
+          </NavLink>
           <NavLink to='/projects' activeStyle>
             Projects
           </NavLink>
@@ -23,11 +26,12 @@ const Navbar = () => {
           </NavLink>
           <NavLink to='/' activeStyle>
           </NavLink>
-            <SocialIcon url="https://github.com/jmrossi98" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
-            <SocialIcon url="https://linkedin.com/in/jakob-rossi" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
-            <SocialIcon url="https://www.facebook.com/jakob.rossi" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
-            <SocialIcon url="https://www.instagram.com/jay_crossin" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
-            <SocialIcon url="https://twitter.com/jay_crossin" bgColor="#000000" style={{width:'35px', height:'35px'}}/>
+            <SocialIcon url="https://github.com/jmrossi98" bgColor="#000000" style={{width:'35px', height:'35px'}} target="_blank"/>
+            <SocialIcon url="https://linkedin.com/in/jakob-rossi" bgColor="#000000" style={{width:'35px', height:'35px'}} target="_blank"/>
+            <SocialIcon url="https://www.facebook.com/jakob.rossi" bgColor="#000000" style={{width:'35px', height:'35px'}} target="_blank"/>
+            <SocialIcon url="https://www.instagram.com/jay_crossin" bgColor="#000000" style={{width:'35px', height:'35px'}} target="_blank"/>
+            <SocialIcon url="https://twitter.com/jay_crossin" bgColor="#000000" style={{width:'35px', height:'35px'}} target="_blank"/>
+            {/* <SocialIcon url="https://open.spotify.com/playlist/1MDN01uEeHaE5OSLoxVjcc?si=0b46f2cf91bc4f8f" bgColor="#000000" style={{width:'35px', height:'35px'}}/> */}
         </NavMenu>
       </Nav>
     </>

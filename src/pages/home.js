@@ -8,7 +8,7 @@ const Home = () => {
         display: 'flex',
         justifyContent: 'Center',
         alignItems: 'Center',
-        padding: "220px 230px"
+        padding: "180px 230px"
       }}>
         <div>
           <img src={pic} alt="That's me" style={{
@@ -33,7 +33,7 @@ const Home = () => {
           }}>
             Hi, I'm Jakob! Welcome to my website.<br></br><br></br>
             I'm a Software Engineer based in Rochester, NY. I'm passionate about learning new skills and developing useful software.<br></br><br></br>
-            I've learned a wide range of skills, from embedded systems to web-based programming. 
+            I'm interested in embedded systems programming, web development and artificial intelligence.
           </p>
         </div>
     </div>
