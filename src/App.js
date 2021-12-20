@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MemoryRouter, Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/home'
 import About from './pages/about'
@@ -10,7 +10,7 @@ import Contact from './pages/contact'
 
 function App() {
   return (
-    <Router>
+    <MemoryRouter>
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
@@ -19,7 +19,7 @@ function App() {
         <Route path='/resume' exact component={Resume} />
         <Route path='/contact' exact component={Contact} />
       </Switch>
-    </Router>
+    </MemoryRouter>
   );
 }
 
