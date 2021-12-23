@@ -1,11 +1,13 @@
 import React from 'react';
 
 const About = () => {
+  var date = new Date(2013,9,3);
+  var years = new Date(new Date() - date).getFullYear() - 1970;
   return (
     <div style={{display: 'flex', justifyContent: 'Center', alignItems: 'Center', padding: "50px 210px"}}>
         <div>
             <p style={{ fontSize: '200%', width: '1000px', fontWeight: 'bold', fontFamily: "ＭＳ Ｐゴシック"}}>
-              I'm from Penn Yan, NY, a small town in the Finger Lakes Region. I started programming 6 years ago and have loved it ever since.<br></br><br></br>
+              I'm from Penn Yan, NY, a small town in the Finger Lakes Region. I started programming {years} years ago and have loved it ever since.<br></br><br></br>
               I graduated from the Rochester Institute of Technology with a Bachelor of Science Degree in Software Engineering. I minored in Business Administration and had a concentration in American Politics.<br></br><br></br>
               I currently work at <a href="https://www.mastodondesign.com" target="_blank">Mastodon Design</a>, a telecommunications/defense company in Rochester, NY. I develop test scripts in Python to validate 
               the functionality of our products, which often involves the remote automation of RF Signal Analysis Equipment. Some of these scripts can also 
@@ -19,5 +21,5 @@ const About = () => {
     </div>
   );
 };
-  
+
 export default About;
