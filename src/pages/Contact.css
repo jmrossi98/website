@@ -23,7 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    width: 300px;
 }
 
 
@@ -63,25 +63,30 @@
     .form-container > h2 {
         color: #fff;
         font-size: 40px;
-        padding: 100px;
-        width: 600px;
+        width: 400px;
         overflow-wrap: break-word;
+        padding: 0px;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
     .btn {
         right: 0;
         margin-right: -240px;
+        
     }
 
     .input-container > .input-name {
         width: 400px;
         line-height: 47px;
+        padding: 0px;
     }
     
     .input-container > .input-email {
         height: 50px;
         width: 400px;
         line-height: 47px;
+        padding: 0px;
     }
     
     .input-container > .input-text {

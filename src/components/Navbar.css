@@ -129,6 +129,7 @@
       top: 0;
       left: 0;
       transform: translate(-7%, 10%);
+      font-size: 1.75rem;
     }
   
     .menu-icon {
@@ -139,6 +140,7 @@
       transform: translate(-50%, 130%);
       font-size: 1.8rem;
       cursor: pointer;
+      margin-right: 20px;
     }
   
     .fa-times {
