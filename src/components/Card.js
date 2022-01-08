@@ -10,7 +10,7 @@ function Card() {
                 <div className="cards__wrapper">
                     <div className="cards__items">
                         <CardItem 
-                            src="images/uds.png"
+                            src="/images/uds.png"
                             text="The Community Advisory Board for the Marketview Heights neighborhood of Rochester, NY partnered with RIT to
                                 develop a platform that aids in democratizing data amongst members of its community. For a senior project,
                                 I was part of a team of five that developed a mobile app aiming to help address issues in the
@@ -22,7 +22,7 @@ function Card() {
                             path="https://gitlab.com/urban-data-science"
                         />
                         <CardItem 
-                            src="images/fuzzer.png"
+                            src="/images/fuzzer.png"
                             text="I created an automated script that is able to explore potential security weaknesses for any given URL. The program
                             'spoofs', or simulates user actions to find commonly exploited web vulnerabilities. A user can give authentication
                             data to attempt a login, or 'crawl' the website to continuously find new URLs. I worked on the project individually for a
@@ -33,7 +33,7 @@ function Card() {
                             path="https://github.com/jmrossi98/fuzzer"
                         />
                         <CardItem 
-                            src="images/stm32.jpg"
+                            src="/images/stm32.jpg"
                             text="I developed a series of scripts that utilize the microcontroller of a STM32L476VGTX discovery board. The series of projects gave me a much
                             better understanding of programming embedded systems. One script prompts the user to enter commands that change the state of attached servo
                             motors by generating PWM signals from the discovery board. Another script starts a 'game' that allows a user to move a cursor on a UART

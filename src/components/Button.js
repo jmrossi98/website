@@ -19,7 +19,7 @@ export const Button = ({
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
     return(
-        <Link to={path} className='btn-mobile'>
+        <Link to={`${process.env.PUBLIC_URL}${path}`} className='btn-mobile'>
             <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type} value={value}>
                 {children}
             </button>

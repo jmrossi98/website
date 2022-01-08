@@ -26,30 +26,30 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            Jakob Rossi
+          <Link to={`${process.env.PUBLIC_URL}/`} className="navbar-logo">
+            Jakob Rossi <img src='/images/black-mage.gif' className='image'/>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
+              <Link to={`${process.env.PUBLIC_URL}/about`} className='nav-links' onClick={closeMobileMenu}>
                 About
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
+              <Link to={`${process.env.PUBLIC_URL}/projects`} className='nav-links' onClick={closeMobileMenu}>
                 Projects
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/resume' className='nav-links' onClick={closeMobileMenu}>
+              <Link to={`${process.env.PUBLIC_URL}/resume`} className='nav-links' onClick={closeMobileMenu}>
                 Resume
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+              <Link to={`${process.env.PUBLIC_URL}/contact`} className='nav-links' onClick={closeMobileMenu}>
                 Contact
               </Link>
             </li>
