@@ -1,0 +1,92 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    padding: 100px;
+    margin-top: -50px;
+    margin-bottom: 200px;
+}
+
+.form-container > h2 {
+    color: #fff;
+    font-size: 40px;
+    padding: 100px;
+    overflow-wrap: break-word;
+    width: 1000px;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+
+
+.btn {
+    font-size: 100%;
+    margin-top: 10px;
+    margin-right: -640px;
+    float: right;
+    right: 0;
+}
+
+.input-container > .input-name {
+    height: 50px;
+    width: 800px;
+    line-height: 47px;
+}
+
+.input-container > .input-email {
+    height: 50px;
+    width: 800px;
+    line-height: 47px;
+}
+
+.input-container > .input-text {
+    height: 200px;
+    width: 800px;
+    line-height: 47px;
+}
+
+
+@media screen and (max-width: 820px) {
+    .form-container {
+        margin-top: -50px;
+        margin-bottom: -400px;
+    }
+
+    .form-container > h2 {
+        color: #fff;
+        font-size: 40px;
+        padding: 100px;
+        width: 600px;
+        overflow-wrap: break-word;
+    }
+
+    .btn {
+        right: 0;
+        margin-right: -540px;
+    }
+
+    .input-container > .input-name {
+        width: 400px;
+        line-height: 47px;
+    }
+    
+    .input-container > .input-email {
+        height: 50px;
+        width: 400px;
+        line-height: 47px;
+    }
+    
+    .input-container > .input-text {
+        height: 200px;
+        width: 400px;
+        line-height: 30px;
+    }
+  }
