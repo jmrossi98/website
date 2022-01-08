@@ -108,26 +108,8 @@
     flex-direction: column;
   }
 
-  @media only screen and (min-width: 1200px) {
-    .content__blog__container {
-      width: 84%;
-    }
-  }
-  
-  @media only screen and (min-width: 1024px) {
-    .cards__items {
-      display: flex;
-    }
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    .cards__item {
-      margin-bottom: 2rem;
-    }
-  }
 
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 991.98px) {
     .cards__item {
       display: flex;
       flex: 1;

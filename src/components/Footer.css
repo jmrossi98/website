@@ -38,7 +38,7 @@
   margin-bottom: 16px;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 991.98px) {
 
   .footer-container {
     padding: 100px;
@@ -58,5 +58,3 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-}
