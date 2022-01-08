@@ -44,12 +44,9 @@
         font-size: 30px;
     }
 
-    .btn-mobile {
-        margin-left: -490px;
-        width: 100%;
+    .btns {
+        width: 400px;
+        margin-left: 300px;
     }
 
-    .btn {
-        margin-left: -300px;
-    }
 }
