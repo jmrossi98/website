@@ -1,9 +1,9 @@
-import './Card.css'
+import './Cards.css'
 import React from 'react'
 
 import CardItem from './CardItem'
 
-function Card() {
+function Cards() {
     return (
         <div className='cards'>
             <div className="cards__container">
@@ -49,4 +49,4 @@ function Card() {
     )
 }
 
-export default Card
+export default Cards

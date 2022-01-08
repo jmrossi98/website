@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Card from '../components/Card';
+import Cards from '../components/Cards';
 
 const Projects = () => {
     return (
         <>
-            <Card />
+            <Cards />
         </>
     );
   };
