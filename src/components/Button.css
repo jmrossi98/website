@@ -40,3 +40,8 @@
     color: #242424;
     transition: 250ms;
   }
+
+  .btn-mobile {
+    margin-left: -870px;
+    margin-top: 150px;
+}

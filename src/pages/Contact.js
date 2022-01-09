@@ -3,6 +3,8 @@ import './Contact.css'
 
 import emailjs from 'emailjs-com'
 
+import { Button, InputButton } from '../components/Button';
+
 const Contact = () => {
 
   function sendEmail(e) {
@@ -19,10 +21,19 @@ const Contact = () => {
       <h2>Send me a message!</h2>
       <form className="contact-form" onSubmit={sendEmail} action='/'>
           <div className='input-container'>
-              <textarea name="message" className='input-name' placeholder='Name'></textarea>
-              <textarea name="message" className='input-email' placeholder='Email'></textarea>
-              <textarea name="message" className='input-text' placeholder='Your Message'></textarea>
-              <input type="submit" value="Submit" className='btn btn--outline btn--large' to='/'></input>
+              <textarea name="message" className='input-name' placeholder=' Name'></textarea>
+              <textarea name="message" className='input-email' placeholder=' Email'></textarea>
+              <textarea name="message" className='input-text' placeholder=' Your Message'></textarea>
+              <InputButton
+                className='btn-input'
+                buttonStyle='btn--outline'
+                buttonSize='btn--large'
+                path='/'
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </InputButton>
           </div>
       </form>
       <h2>Or contact me at: jmrossi98@gmail.com</h2>

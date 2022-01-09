@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,10 +12,14 @@ import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 
+
 function App() {
   return (
     <>
-    <video src='/videos/background.mp4' autoPlay loop muted/>
+    <div>
+      <video webkit-playsinline playsinline loop autoPlay muted autobuffer poster="images/background.gif" src="/videos/background.mp4" type="videos/mp4">
+      </video>
+    </div>
     <Router>
       <Navbar />
       <Switch>

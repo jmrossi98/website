@@ -109,18 +109,26 @@
   }
 
 
-  @media screen and (max-width: 991.98px) {
+  @media screen and (max-width: 999px) {
+    .cards__item {
+      width: 700px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
     .cards__item {
       display: flex;
       flex: 1;
       margin: 0 1rem;
       border-radius: 10px;
-      width: 400px;
-      padding: 0px;
+      width: 450px;
+      padding-bottom: 50px;
     }
 
     .cards__items {
       margin-bottom: -400px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
     
     .cards__item__text {

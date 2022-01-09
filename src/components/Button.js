@@ -26,3 +26,16 @@ export const Button = ({
         </Link>
     )
 };
+
+export const InputButton = ({
+    buttonStyle,
+    buttonSize,
+    path
+}) => {
+    const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
+    const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
+
+    return(
+        <input type="submit" value="Submit" className={`btn ${checkButtonStyle} ${checkButtonSize}`} to={path}></input>
+    )
+};
