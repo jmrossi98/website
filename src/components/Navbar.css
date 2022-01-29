@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     height: 250px;
-    max-width: 2000px;
+    max-width: 2300px;
   }
   
   .navbar-logo {
@@ -42,7 +42,7 @@
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
@@ -137,7 +137,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      transform: translate(-50%, 110%);
+      transform: translate(-50%, 120%);
       font-size: 1.8rem;
       cursor: pointer;
       margin-right: 50px;
@@ -168,4 +168,16 @@
       color: #242424;
       transition: 250ms;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .navbar-logo {
+      transform: translate(-10%, 5%);
+    }
+
+    .menu-icon {
+      transform: translate(70%, 120%);
+    }
+
   }

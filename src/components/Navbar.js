@@ -48,6 +48,11 @@ function Navbar() {
                 Resume
               </Link>
             </li>
+            {/* <li className='nav-item'>
+              <Link to='/blog' className='nav-links' onClick={closeMobileMenu}>
+                Blog
+              </Link>
+            </li> */}
             <li className='nav-item'>
               <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
                 Contact

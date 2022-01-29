@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/about' exact component={About}/>
         <Route path='/projects' exact component={Projects}/>
         <Route path='/resume' exact component={Resume}/>
+        <Route path='/blog' exact component={Blog}/>
         <Route path='/contact' exact component={Contact}/>
       </Switch>
       <Footer />
