@@ -1,3 +1,6 @@
+run: build
+	npm start
+
 build: git
 	npm run build
 

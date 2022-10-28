@@ -7,12 +7,14 @@
     align-items: center;
     object-fit: contain;
     margin-bottom: -170px;
-    margin-top: -500px;
+    margin-top: -450px;
 }
 
 .hero-container > h1 {
     color: #fff;
     font-size: 60px;
+    margin-right: 570px;
+    line-height:70px;
 }
 
 .hero-container > h2 {
@@ -22,14 +24,15 @@
     color: #fff;
     font-size: 32px;
     width: 1500px;
+    line-height:70px;
 }
 
 .btn-mobile > .btn{
-    margin-top: 150px;
+    margin-top: 50px;
     width: 400px;
     height: 150px;
-    margin-bottom: -1000px;
-    margin-left: 300px;
+    margin-bottom: -600px;
+    margin-right: 150px;
 }
 
 .btn-mobile {

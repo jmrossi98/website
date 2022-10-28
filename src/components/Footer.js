@@ -45,6 +45,14 @@ function Footer() {
           >
             <i class='fab fa-twitter' />
           </a>
+          <a
+            class='social-icon-link steam'
+            href="https://steamcommunity.com/profiles/76561198176095826/"
+            target='_blank'
+            aria-label='Steam'
+          >
+            <i class='fab fa-steam' />
+          </a>
         </div>
         <small class='website-rights'>JAKOB ROSSI © 2022</small>
       </div>
