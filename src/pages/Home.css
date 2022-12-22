@@ -84,13 +84,14 @@
     .hero-container > h2 {
         font-size: 20px;
         width: 700px;
-        margin-left: 300px;
+        margin-left: 140px;
         margin-top: -250px;
         line-height:40px;
     }
 
     .btn-mobile > .btn{
         margin-left: 590px;
+        margin-right: 0px;
         height: 100px;
     }
 
@@ -99,8 +100,9 @@
 @media screen and (max-width: 768px) {
 
     .hero-container {
-        margin-top: -200px;
-        margin-bottom: -700px;
+        margin-top: -400px;
+        margin-bottom: -900px;
+        margin-left: -70px;
     }
 
     .hero-container > h1 {
@@ -114,13 +116,13 @@
     .hero-container > h2 {
         width: 400px;
         margin-bottom: 200px;
-        margin-left: 450px;
+        margin-right: -50px;
         line-height:30px;
     }
 
     .btn-mobile > .btn{
         margin-top: -300px;
-        margin-right: -280px;
+        margin-right: -400px;
         height: 90px;
         width: 300px;
     }
