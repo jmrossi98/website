@@ -14,6 +14,7 @@
     color: #fff;
     font-size: 60px;
     margin-right: 570px;
+    margin-top: -50px;
     line-height:70px;
 }
 
@@ -31,7 +32,7 @@
     margin-top: 50px;
     width: 400px;
     height: 150px;
-    margin-bottom: -600px;
+    margin-bottom: -200px;
     margin-right: 150px;
 }
 
@@ -39,66 +40,89 @@
     margin-left: -1100px;
 }
 
-@media screen and (max-height: 1000px) {
+@media screen and (max-height: 1150px) {
     .hero-container {
-        margin-top: 250px;
-        margin-bottom: 100px;
+        margin-top: -270px;
+        margin-bottom: -150px;
     }
 
     .hero-container > h1 {
         width: 900px;
+        font-size: 50px;
+        margin-right: 720px;
+        margin-top: -150px;
     }
 
     .hero-container > h2 {
-        width: 950px;
+        width: 1200px;
+        margin-top: -50px;
+        margin-right: 430px;
+        line-height:50px;
+        font-size: 28px;
     }
 
     .btn-mobile > .btn{
-        margin-bottom: 200px;
+        margin-top: 10px;
+        margin-bottom: -300px;
     }
 }
 
 @media screen and (max-width: 991.98px) {
 
     .hero-container {
-        margin-bottom: -400px;
+        margin-bottom: -550px;
     }
 
     .hero-container > h1 {
-        font-size: 50px;
-        margin-top: 0px;
+        font-size: 40px;
+        margin-top: -150px;
         height: 300px;
-        padding-bottom: 100px;
         width: 700px;
-        margin-left: 10px;
+        margin-left: 450px;
     }
 
     .hero-container > h2 {
-        font-size: 30px;
+        font-size: 20px;
         width: 700px;
-        margin-left: 140px;
-        margin-top: 0px;
+        margin-left: 300px;
+        margin-top: -250px;
+        line-height:40px;
     }
 
     .btn-mobile > .btn{
-        margin-left: 660px;
+        margin-left: 590px;
+        height: 100px;
     }
 
 }
 
 @media screen and (max-width: 768px) {
 
+    .hero-container {
+        margin-top: -200px;
+        margin-bottom: -700px;
+    }
+
     .hero-container > h1 {
         width: 400px;
+        margin-top: 70px;
+        margin-left: 720px;
+        margin-bottom: 30px;
+        line-height:50px;
     }
 
     .hero-container > h2 {
         width: 400px;
-        margin-bottom: 300px;
+        margin-bottom: 200px;
+        margin-left: 450px;
+        line-height:30px;
     }
 
     .btn-mobile > .btn{
-        margin-top: -200px;
+        margin-top: -300px;
+        margin-right: -280px;
+        height: 90px;
+        width: 300px;
     }
 
 }
