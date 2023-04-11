@@ -17,7 +17,6 @@ const About = () => {
         <br></br><br></br>
         I graduated from the Rochester Institute of Technology with a Bachelor of Science Degree in Software Engineering. I minored in Business Administration and had a concentration in American Politics.<br></br><br></br>
         I've worked extensively with Python, Javascript / Typescript, HTML5, C++, C and Java.<br></br><br></br>
-        I achieved the rank of Eagle Scout during my time in the Boy Scouts of America.<br></br><br></br>
         In my free time I enjoy gaming and listening to music.
       </p>
     </div>
