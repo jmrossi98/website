@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css';
 
 function Footer() {
+  var year = new Date().getFullYear()
   return (
     <div className='footer-container'>
       <div class='social-icons'>
@@ -54,7 +55,7 @@ function Footer() {
             <i class='fab fa-steam' />
           </a>
         </div>
-        <small class='website-rights'>JAKOB ROSSI © 2022</small>
+        <small class='website-rights'>JAKOB ROSSI © {year}</small>
       </div>
   );
 }
