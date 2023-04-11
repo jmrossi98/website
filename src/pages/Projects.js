@@ -5,6 +5,14 @@ import CardItem from '../components/CardItem';
 
 var PROJECTS = [
     {
+        "src":"/images/model_eval.png",
+        "text":"I developed a music classification tool that uses deep learning to predict the genre of a given audio file.  \
+            The model used is a Long Short-Term Memory Recurrent Neural Network and was trained on the GTZAN music dataset  \
+            Created using Python, Tensorflow, Keras, Scikit-Learn, NumPy, Matplotlib and Librosa",
+        "label":"Genre Detect",
+        "path":"https://github.com/jmrossi98/genre_detect"
+    },
+    {
         "src":"/images/uds.png",
         "text":"The Community Advisory Board for the Marketview Heights neighborhood of Rochester, NY partnered with RIT to \
             develop a platform that aids in democratizing data amongst members of its community. For a senior project, \
