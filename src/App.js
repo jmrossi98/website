@@ -18,7 +18,7 @@ function App() {
   return (
     <>
     <div>
-      <video webkit-playsinline playsinline loop autoPlay muted autobuffer poster="images/background.gif" src="/videos/background.mp4" type="videos/mp4">
+      <video webkit-playsinline playsinline loop autoPlay muted autobuffer poster="https://jmrossi98-personal-content.s3.amazonaws.com/images/background.gif" src="https://jmrossi98-personal-content.s3.amazonaws.com/videos/background.mp4" type="videos/mp4">
       </video>
     </div>
     <Router>
