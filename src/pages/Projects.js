@@ -5,7 +5,7 @@ import CardItem from '../components/CardItem';
 
 var PROJECTS = [
     {
-        "src":"/images/model_eval.png",
+        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/model_eval.png",
         "text":"I developed a music classification tool that uses deep learning to predict the genre of a given audio file.  \
             The model it uses is a Long Short-Term Memory Recurrent Neural Network trained on the GTZAN music dataset.  \
             Created using Python, Tensorflow, Keras, Scikit-Learn, NumPy, Matplotlib and Librosa",
@@ -13,7 +13,7 @@ var PROJECTS = [
         "path":"https://github.com/jmrossi98/genre_detect"
     },
     {
-        "src":"/images/uds.png",
+        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/uds.png",
         "text":"The Community Advisory Board for the Marketview Heights neighborhood of Rochester, NY partnered with RIT to \
             develop a platform that aids in democratizing data amongst members of its community. For a senior project, \
             I was part of a team of five that developed a mobile app aiming to help address issues in then\
@@ -25,7 +25,7 @@ var PROJECTS = [
         "path":"https://gitlab.com/urban-data-science"
     },
     {
-        "src":"/images/fuzzer.png",
+        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/fuzzer.png",
         "text": "I created an automated script that is able to explore potential security weaknesses for any given URL. The program\
                 'spoofs', or simulates user actions to find commonly exploited web vulnerabilities. A user can give authentication\
                 data to attempt a login, or 'crawl' the website to continuously find new URLs. I worked on the project individually for a\
@@ -36,7 +36,7 @@ var PROJECTS = [
         "path":"https://github.com/jmrossi98/fuzzer"
     },
     {
-        "src":"/images/stm32.jpg",
+        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/stm32.jpg",
         "text":"I developed a series of scripts that utilize the microcontroller of a STM32L476VGTX discovery board. The series of projects gave me a much\
                 better understanding of programming embedded systems. One script prompts the user to enter commands that change the state of attached servo\
                 motors by generating PWM signals from the discovery board. Another script starts a 'game' that allows a user to move a cursor on a UART\
