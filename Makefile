@@ -1,6 +1,7 @@
 deploy: build
 	sudo docker stop website; exit 0;
-	sudo docker run -p 3000:80 -d --name website --rm jmrossi98/website
+	sudo docker build -t website .
+	sudo docker run -p 3000:80 -d --name website --rm website
 
 run: build
 	npm start
