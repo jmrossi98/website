@@ -34,17 +34,7 @@ var PROJECTS = [
                 of websites made by others. Written in Python.",
         "label":"Fuzzer",
         "path":"https://github.com/jmrossi98/fuzzer"
-    },
-    {
-        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/stm32.jpg",
-        "text":"I developed a series of scripts that utilize the microcontroller of a STM32L476VGTX discovery board. The series of projects gave me a much\
-                better understanding of programming embedded systems. One script prompts the user to enter commands that change the state of attached servo\
-                motors by generating PWM signals from the discovery board. Another script starts a 'game' that allows a user to move a cursor on a UART\
-                terminal by moving the discovery board. A gyroscope is used to track the position and angle of the board to determine cursor position.\
-                Written in C, used the FreeRTOS API to assist in certain functions.",
-        "label":"STM32",
-        "path":"https://github.com/jmrossi98/swen563"
-    },
+    }
 ]
 
 const Projects = () => {
