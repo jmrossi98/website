@@ -10,7 +10,7 @@ const About = () => {
         <img src="https://jmrossi98-personal-content.s3.amazonaws.com/images/me.png" className='me'></img>
         <p className='intro-1'>
           <br></br><br></br>
-          I'm from Penn Yan, NY, a small town in the Finger Lakes Region of Upstate New York. I started programming {years} years ago and have loved it ever since.<br></br><br></br>
+          I'm from Penn Yan, NY, a small village in the Finger Lakes Region of Upstate New York. I started programming {years} years ago and have loved it ever since.<br></br><br></br>
         </p>
       </div>
       <p className='intro-2'>
