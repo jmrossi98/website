@@ -8,15 +8,25 @@ var PROJECTS = [
         "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/model_eval.png",
         "text":"I developed a music classification tool that uses deep learning to predict the genre of a given audio file.  \
             The model it uses is a Long Short-Term Memory Recurrent Neural Network trained on the GTZAN music dataset.  \
-            Created using Python, Tensorflow, Keras, Scikit-Learn, NumPy, Matplotlib and Librosa",
+            Created using Python, Tensorflow, Keras, Scikit-Learn, NumPy, Matplotlib and Librosa.",
         "label":"Genre Detect",
         "path":"https://github.com/jmrossi98/genre_detect"
+    },
+    {
+        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/retrones.png",
+        "text":"I created a program that emulates the 6502 microprocessor architecture on the Nintendo Entertainment System. \
+            The program simulates the clock cycles and bus transactions performed by the OLC6502 CPU. \
+            I reverse engineered the functionality of the picture (OLC2C02) and audio (OLC2A03) processing units. \
+            The project game me a much better understanding of rendering 2D graphics and early game console architecture.\
+            Created using C++ and OpenGL.",
+        "label":"NES Emulator",
+        "path":"https://github.com/jmrossi98/nes_emulator"
     },
     {
         "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/uds.png",
         "text":"The Community Advisory Board for the Marketview Heights neighborhood of Rochester, NY partnered with RIT to \
             develop a platform that aids in democratizing data amongst members of its community. For a senior project, \
-            I was part of a team of five that developed a mobile app aiming to help address issues in then\
+            I was part of a team of five that developed a mobile app aiming to help address issues in the\
             neighborhod and assist the advisory board in gauging public interest on community projects. Users can place\
             pins on a map of the area to give their thoughts on certain issues, which can direct the city to promote\
             public initiatives that the citizens want. The app can also point citizens to data pertaining to the community.\
@@ -34,7 +44,17 @@ var PROJECTS = [
                 of websites made by others. Written in Python.",
         "label":"Fuzzer",
         "path":"https://github.com/jmrossi98/fuzzer"
-    }
+    },
+    {
+        "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/stm32.jpg",
+        "text":"I developed a series of scripts that utilize the microcontroller of a STM32L476VGTX discovery board. The series of projects gave me a much\
+                better understanding of programming embedded systems. One script prompts the user to enter commands that change the state of attached servo\
+                motors by generating PWM signals from the discovery board. Another script starts a 'game' that allows a user to move a cursor on a UART\
+                terminal by moving the discovery board. A gyroscope is used to track the position and angle of the board to determine cursor position.\
+                Written in C and used the FreeRTOS API to assist in certain functions.",
+        "label":"STM32",
+        "path":"https://github.com/jmrossi98/swen563"
+    },
 ]
 
 const Projects = () => {
