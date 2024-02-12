@@ -8,15 +8,17 @@ var PROJECTS = [
         "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/model_eval.png",
         "text":"I developed a music classification tool that uses deep learning to predict the genre of a given audio file.  \
             The model it uses is a Long Short-Term Memory Recurrent Neural Network trained on the GTZAN music dataset.  \
-            Created using Python, Tensorflow, Keras, Scikit-Learn, NumPy, Matplotlib and Librosa",
+            Created using Python, Tensorflow, Keras, Scikit-Learn, NumPy, Matplotlib and Librosa.",
         "label":"Genre Detect",
         "path":"https://github.com/jmrossi98/genre_detect"
     },
     {
         "src":"https://jmrossi98-personal-content.s3.amazonaws.com/images/retrones.png",
         "text":"I created a program that emulates the 6502 microprocessor architecture on the Nintendo Entertainment System. \
-            Reverse engineered the functionality of the picture/audio processing units and I/O interrupts. \
-            Created using C++ and OpenGL",
+            The program simulates the clock cycles and bus transactions performed by the OLC6502 CPU. \
+            I reverse engineered the functionality of the picture (OLC2C02) and audio (OLC2A03) processing units. \
+            The project game me a much better understanding of rendering 2D graphics and early game console architecture.\
+            Created using C++ and OpenGL.",
         "label":"NES Emulator",
         "path":"https://github.com/jmrossi98/nes_emulator"
     },
@@ -49,7 +51,7 @@ var PROJECTS = [
                 better understanding of programming embedded systems. One script prompts the user to enter commands that change the state of attached servo\
                 motors by generating PWM signals from the discovery board. Another script starts a 'game' that allows a user to move a cursor on a UART\
                 terminal by moving the discovery board. A gyroscope is used to track the position and angle of the board to determine cursor position.\
-                Written in C, used the FreeRTOS API to assist in certain functions.",
+                Written in C and used the FreeRTOS API to assist in certain functions.",
         "label":"STM32",
         "path":"https://github.com/jmrossi98/swen563"
     },
