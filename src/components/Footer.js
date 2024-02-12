@@ -39,14 +39,6 @@ function Footer() {
             <i class='fab fa-instagram' />
           </a>
           <a
-            class='social-icon-link twitter'
-            href="https://twitter.com/jay_crossin"
-            target='_blank'
-            aria-label='Twitter'
-          >
-            <i class='fab fa-twitter' />
-          </a>
-          <a
             class='social-icon-link steam'
             href="https://steamcommunity.com/profiles/76561198176095826/"
             target='_blank'
