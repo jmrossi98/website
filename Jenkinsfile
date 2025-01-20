@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_SSH_CONTEXT = 'ec2' // The context name for SSH to EC2
+        CI = 'false'
     }
     stages {
         stage('Clone Repo') {
@@ -52,6 +53,7 @@ pipeline {
                 script {
                     // Use the created context to build the Docker image
                     sh 'docker context use ${DOCKER_SSH_CONTEXT}'
+                    sh 'docker stop website; exit 0;'
                     sh 'docker build -t website .'
                 }
             }
