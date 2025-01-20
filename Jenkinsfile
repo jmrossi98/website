@@ -11,6 +11,26 @@ pipeline {
             }
         }
         
+        // Stage to install npm dependencies
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Ensure Node.js is installed and available
+                    sh 'npm install'  // Run npm install to install dependencies
+                }
+            }
+        }
+
+        // Stage to build the application using npm
+        stage('Build Application') {
+            steps {
+                script {
+                    // Run the build command
+                    sh 'npm run build'  // Run npm build script (you can replace this with your actual build command)
+                }
+            }
+        }
+
         stage('Set up Docker Context') {
             steps {
                 script {
