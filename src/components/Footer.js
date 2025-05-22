@@ -23,22 +23,6 @@ function Footer() {
             <i class='fab fa-linkedin' />
           </a>
           <a
-            class='social-icon-link facebook'
-            href="https://www.facebook.com/jakob.rossi"
-            target='_blank'
-            aria-label='Facebook'
-          >
-            <i class='fab fa-facebook-f' />
-          </a>
-          <a
-            class='social-icon-link instagram'
-            href="https://www.instagram.com/jay_crossin"
-            target='_blank'
-            aria-label='Instagram'
-          >
-            <i class='fab fa-instagram' />
-          </a>
-          <a
             class='social-icon-link steam'
             href="https://steamcommunity.com/profiles/76561198176095826/"
             target='_blank'
