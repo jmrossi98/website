@@ -30,7 +30,7 @@ async function sendEmail() {
       <h2 class="section-title"><span class="index">04.</span> Get In Touch</h2>
       <p class="blurb">
         I'm always open to hearing about new opportunities, interesting projects, or just talking
-        shop. My inbox is open — I'll get back to you as soon as I can.
+        shop. My inbox is open, and I'll get back to you as soon as I can.
       </p>
       <form ref="form" class="contact-form" @submit.prevent="sendEmail">
         <div class="row">
@@ -51,7 +51,7 @@ async function sendEmail() {
           {{ status === 'sending' ? 'Sending…' : 'Send Message' }}
         </button>
         <p v-if="status === 'sent'" class="feedback success" role="status">
-          Message sent — thanks for reaching out!
+          Message sent, thanks for reaching out!
         </p>
         <p v-if="status === 'error'" class="feedback error" role="alert">
           Something went wrong. Email me directly at

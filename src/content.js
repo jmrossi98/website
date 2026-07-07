@@ -12,7 +12,7 @@ export const profile = {
   photo: `${S3}/images/me.png`,
   blackMage: `${S3}/images/black-mage.gif`,
   tagline:
-    'I build reliable, high-impact software — from cloud-native backend services to polished frontend experiences.',
+    'I build reliable, high-impact software, from cloud-native backend services to polished frontend experiences.',
 }
 
 export const about = {
@@ -39,7 +39,7 @@ export const experience = [
   {
     company: 'Capital One',
     role: 'Senior Software Engineer',
-    period: 'Mar 2025 — Present',
+    period: 'Mar 2025 – Present',
     location: 'McLean, VA',
     bullets: [
       'Designed and implemented real-time data processing features in TypeScript for a multi-user message streaming platform on AWS Lambda and DynamoDB, enhancing onboarding alerting and improving the experience for millions of users.',
@@ -52,10 +52,10 @@ export const experience = [
   {
     company: 'Mastodon Design LLC, a CACI Company',
     role: 'Software Engineer',
-    period: 'Aug 2019 — Mar 2025',
+    period: 'Aug 2019 – Mar 2025',
     location: 'Rochester, NY',
     bullets: [
-      'Owned mission-critical backend microservices — Python / Django REST APIs and PostgreSQL databases — supporting 5+ manufacturing and supply chain applications where downtime would halt production, cutting API response times by 40% through query optimization and caching.',
+      'Owned mission-critical backend microservices (Python / Django REST APIs and PostgreSQL databases) supporting 5+ manufacturing and supply chain applications where downtime would halt production, cutting API response times by 40% through query optimization and caching.',
       'Led feature development for a production tracking web app (TypeScript / React / Node / Docker) enabling real-time verification of test completion and yield metrics, used daily by manufacturing teams managing millions in inventory.',
       "Built the supply chain department's primary desktop application in Python for serial tracking and supplier reporting, reducing task completion time by 30%.",
       'Developed a Java-based API wrapper integrating legacy MATLAB factory systems with modern data pipelines.',
@@ -67,7 +67,7 @@ export const experience = [
   {
     company: 'Mastodon Design LLC, a CACI Company',
     role: 'Software Engineer Intern',
-    period: 'Sept 2018 — Aug 2019',
+    period: 'Sept 2018 – Aug 2019',
     location: 'Rochester, NY',
     bullets: [
       'Developed full-stack improvements for a multi-threaded customer desktop application in C++ / Qt.',
@@ -104,7 +104,7 @@ export const projects = [
     title: 'Urban Data Science',
     image: `${S3}/images/uds.png`,
     description:
-      'Civic engagement platform built with RIT and the Marketview Heights Community Advisory Board — residents drop pins on a neighborhood map to surface local issues and guide public initiatives.',
+      'Civic engagement platform built with RIT and the Marketview Heights Community Advisory Board, where residents drop pins on a neighborhood map to surface local issues and guide public initiatives.',
     tech: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
     link: 'https://gitlab.com/urban-data-science',
   },
@@ -120,7 +120,7 @@ export const projects = [
     title: 'STM32 Embedded Projects',
     image: `${S3}/images/stm32.jpg`,
     description:
-      'Series of embedded programs for the STM32L476 discovery board — PWM-driven servo control and a gyroscope-based cursor game over UART, built on FreeRTOS.',
+      'Series of embedded programs for the STM32L476 discovery board, including PWM-driven servo control and a gyroscope-based cursor game over UART, built on FreeRTOS.',
     tech: ['C', 'FreeRTOS'],
     link: 'https://github.com/jmrossi98/swen563',
   },

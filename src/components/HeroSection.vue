@@ -10,8 +10,8 @@ import IconLinkedin from './icons/IconLinkedin.vue'
       <p class="kicker">
         <span aria-hidden="true">&gt;</span> whoami<span class="terminal-cursor"></span>
       </p>
-      <h1 class="glitch-hover" :data-text="`${profile.name}.`">{{ profile.name }}.</h1>
-      <h2>I build software that ships and scales.</h2>
+      <h1 class="glitch-hover" :data-text="profile.name">{{ profile.name }}</h1>
+      <h2>I build software that ships and scales</h2>
       <p class="tagline">
         {{ profile.title }} at <strong>{{ profile.company }}</strong
         >. {{ profile.tagline }}
