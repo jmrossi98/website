@@ -48,6 +48,9 @@ import IconLinkedin from './icons/IconLinkedin.vue'
 }
 
 .kicker {
+  display: flex;
+  align-items: center;
+  line-height: 1;
   font-family: var(--font-mono);
   color: var(--accent);
   margin-bottom: 20px;

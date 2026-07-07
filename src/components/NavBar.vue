@@ -105,17 +105,19 @@ onBeforeUnmount(() => {
 
 .logo {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: baseline;
+  gap: 10px;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: var(--heading);
   letter-spacing: -0.02em;
 }
 
 .logo-mage {
-  width: 28px;
-  height: 28px;
+  height: 1.4em;
+  width: auto;
+  position: relative;
+  top: 3px;
   transition: transform 0.25s ease;
 }
 
