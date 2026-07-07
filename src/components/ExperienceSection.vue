@@ -8,7 +8,7 @@ import { profile, experience, education } from '../content.js'
       <h2 class="section-title"><span class="index">02.</span> Experience</h2>
 
       <ol class="timeline">
-        <li v-for="job in experience" :key="job.company" class="entry">
+        <li v-for="job in experience" :key="`${job.company}-${job.role}`" class="entry">
           <div class="marker" :class="{ current: job.period.includes('Present') }" aria-hidden="true"></div>
           <div class="entry-body card">
             <div class="entry-header">
@@ -39,7 +39,7 @@ import { profile, experience, education } from '../content.js'
             <div class="entry-header">
               <div>
                 <h3>{{ education.degree }}</h3>
-                <p class="company">{{ education.school }} · {{ education.detail }}</p>
+                <p class="company">{{ education.school }}</p>
               </div>
               <div class="meta">
                 <p class="period">{{ education.period }}</p>
