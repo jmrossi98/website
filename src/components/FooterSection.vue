@@ -2,6 +2,7 @@
 import { profile } from '../content.js'
 import IconGithub from './icons/IconGithub.vue'
 import IconLinkedin from './icons/IconLinkedin.vue'
+import IconSteam from './icons/IconSteam.vue'
 
 const year = new Date().getFullYear()
 </script>
@@ -14,6 +15,9 @@ const year = new Date().getFullYear()
       </a>
       <a :href="profile.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
         <IconLinkedin />
+      </a>
+      <a :href="profile.steam" target="_blank" rel="noopener" aria-label="Steam">
+        <IconSteam />
       </a>
     </div>
     <p>© {{ year }} {{ profile.name }} · Built with Vue</p>

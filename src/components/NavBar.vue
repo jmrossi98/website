@@ -47,7 +47,8 @@ onBeforeUnmount(() => {
   <header class="navbar" :class="{ scrolled }">
     <nav class="container nav-inner" aria-label="Primary">
       <a href="#" class="logo" @click="menuOpen = false">
-        {{ profile.name }}<span class="logo-dot">.</span>
+        <span class="glitch-hover" :data-text="profile.name">{{ profile.name }}</span>
+        <img :src="profile.blackMage" alt="" class="logo-mage" />
       </a>
 
       <button
@@ -103,14 +104,23 @@ onBeforeUnmount(() => {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 800;
   font-size: 1.2rem;
   color: var(--heading);
   letter-spacing: -0.02em;
 }
 
-.logo-dot {
-  color: var(--accent);
+.logo-mage {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.25s ease;
+}
+
+.logo:hover .logo-mage {
+  transform: scale(1.15) rotate(-8deg);
 }
 
 .nav-links {

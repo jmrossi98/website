@@ -7,8 +7,10 @@ import IconLinkedin from './icons/IconLinkedin.vue'
 <template>
   <section class="hero" aria-label="Introduction">
     <div class="container">
-      <p class="kicker">Hi, my name is</p>
-      <h1>{{ profile.name }}.</h1>
+      <p class="kicker">
+        <span aria-hidden="true">&gt;</span> whoami<span class="terminal-cursor"></span>
+      </p>
+      <h1 class="glitch-hover" :data-text="`${profile.name}.`">{{ profile.name }}.</h1>
       <h2>I build software that ships and scales.</h2>
       <p class="tagline">
         {{ profile.title }} at <strong>{{ profile.company }}</strong
@@ -41,8 +43,8 @@ import IconLinkedin from './icons/IconLinkedin.vue'
   align-items: center;
   padding-top: var(--nav-height);
   background:
-    radial-gradient(ellipse 60% 50% at 70% 20%, rgba(45, 212, 191, 0.07), transparent),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(56, 132, 244, 0.06), transparent);
+    radial-gradient(ellipse 60% 50% at 70% 20%, rgba(74, 222, 128, 0.08), transparent),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(251, 191, 36, 0.06), transparent);
 }
 
 .kicker {
@@ -114,4 +116,5 @@ h2 {
     justify-content: center;
   }
 }
+
 </style>

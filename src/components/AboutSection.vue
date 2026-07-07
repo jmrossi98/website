@@ -16,7 +16,7 @@ import { profile, about } from '../content.js'
       </div>
       <div class="skills">
         <div v-for="group in about.skills" :key="group.group" class="skill-group">
-          <h3>{{ group.group }}</h3>
+          <h3><span class="comment-prefix">// </span>{{ group.group }}</h3>
           <div class="chips">
             <span v-for="item in group.items" :key="item" class="chip">{{ item }}</span>
           </div>
@@ -81,6 +81,11 @@ import { profile, about } from '../content.js'
   letter-spacing: 0.08em;
   color: var(--text-muted);
   margin-bottom: 12px;
+}
+
+.comment-prefix {
+  color: var(--accent-2);
+  text-transform: none;
 }
 
 .chips {

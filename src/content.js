@@ -7,8 +7,10 @@ export const profile = {
   email: 'jmrossi98@gmail.com',
   github: 'https://github.com/jmrossi98',
   linkedin: 'https://linkedin.com/in/jakob-rossi',
+  steam: 'https://steamcommunity.com/profiles/76561198176095826/',
   resumeUrl: `${S3}/jakob_rossi_resume.pdf`,
   photo: `${S3}/images/me.png`,
+  blackMage: `${S3}/images/black-mage.gif`,
   tagline:
     'I build reliable, high-impact software — from cloud-native backend services to polished frontend experiences.',
 }

@@ -9,7 +9,7 @@ import { profile, experience, education } from '../content.js'
 
       <ol class="timeline">
         <li v-for="job in experience" :key="job.company" class="entry">
-          <div class="marker" aria-hidden="true"></div>
+          <div class="marker" :class="{ current: job.period.includes('Present') }" aria-hidden="true"></div>
           <div class="entry-body card">
             <div class="entry-header">
               <div>
@@ -17,7 +17,10 @@ import { profile, experience, education } from '../content.js'
                 <p class="company">{{ job.company }}</p>
               </div>
               <div class="meta">
-                <p class="period">{{ job.period }}</p>
+                <p class="period">
+                  {{ job.period }}
+                  <span v-if="job.period.includes('Present')" class="active-badge">active</span>
+                </p>
                 <p class="location">{{ job.location }}</p>
               </div>
             </div>
@@ -87,6 +90,33 @@ import { profile, experience, education } from '../content.js'
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.marker.current {
+  background: var(--accent-2);
+  animation: marker-pulse 2s ease-in-out infinite;
+}
+
+@keyframes marker-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px var(--accent-2-soft);
+  }
+  50% {
+    box-shadow: 0 0 0 8px var(--accent-2-soft);
+  }
+}
+
+.active-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-2);
+  border: 1px solid var(--accent-2);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 6px;
 }
 
 .entry-body {
@@ -168,6 +198,12 @@ h3 {
 
   .bullets {
     margin-left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker.current {
+    animation: none;
   }
 }
 </style>

@@ -9,7 +9,7 @@ import IconExternal from './icons/IconExternal.vue'
       <h2 class="section-title"><span class="index">03.</span> Projects</h2>
       <div class="grid">
         <a
-          v-for="project in projects"
+          v-for="(project, i) in projects"
           :key="project.title"
           :href="project.link"
           target="_blank"
@@ -17,6 +17,7 @@ import IconExternal from './icons/IconExternal.vue'
           class="card project"
         >
           <div class="thumb">
+            <span class="level-badge">{{ String(i + 1).padStart(2, '0') }}</span>
             <img :src="project.image" :alt="`Screenshot of ${project.title}`" loading="lazy" />
           </div>
           <div class="body">
@@ -51,6 +52,7 @@ import IconExternal from './icons/IconExternal.vue'
 }
 
 .thumb {
+  position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -65,6 +67,40 @@ import IconExternal from './icons/IconExternal.vue'
 
 .project:hover .thumb img {
   transform: scale(1.04);
+}
+
+.level-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent-2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(251, 191, 36, 0.15) 50%,
+    transparent 100%
+  );
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.project:hover .thumb::after {
+  transform: translateY(100%);
 }
 
 .body {
@@ -111,5 +147,15 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project:hover .thumb img {
+    transform: none;
+  }
+
+  .thumb::after {
+    display: none;
+  }
 }
 </style>

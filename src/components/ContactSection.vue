@@ -32,7 +32,6 @@ async function sendEmail() {
         I'm always open to hearing about new opportunities, interesting projects, or just talking
         shop. My inbox is open — I'll get back to you as soon as I can.
       </p>
-
       <form ref="form" class="contact-form" @submit.prevent="sendEmail">
         <div class="row">
           <label>
