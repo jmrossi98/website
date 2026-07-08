@@ -91,7 +91,7 @@ import IconExternal from './icons/IconExternal.vue'
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(251, 191, 36, 0.15) 50%,
+    rgba(var(--accent-2-rgb), 0.15) 50%,
     transparent 100%
   );
   transform: translateY(-100%);

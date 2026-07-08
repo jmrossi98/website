@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { profile } from '../content.js'
+import ThemeSwitcher from './ThemeSwitcher.vue'
 
 const links = [
   { label: 'About', href: '#about' },
@@ -75,6 +76,9 @@ onBeforeUnmount(() => {
             Resume
           </a>
         </li>
+        <li class="theme-switcher-item">
+          <ThemeSwitcher />
+        </li>
       </ul>
     </nav>
   </header>
@@ -91,7 +95,7 @@ onBeforeUnmount(() => {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 17, 32, 0.85);
+  background: rgba(var(--bg-rgb), 0.85);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px -10px rgba(2, 6, 15, 0.7);
 }
@@ -212,7 +216,7 @@ onBeforeUnmount(() => {
     inset: 0;
     flex-direction: column;
     justify-content: center;
-    background: rgba(10, 17, 32, 0.97);
+    background: rgba(var(--bg-rgb), 0.97);
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
