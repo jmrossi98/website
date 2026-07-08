@@ -43,8 +43,8 @@ import IconLinkedin from './icons/IconLinkedin.vue'
   align-items: center;
   padding-top: var(--nav-height);
   background:
-    radial-gradient(ellipse 60% 50% at 70% 20%, rgba(74, 222, 128, 0.08), transparent),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(251, 191, 36, 0.06), transparent);
+    radial-gradient(ellipse 60% 50% at 70% 20%, rgba(var(--accent-rgb), 0.08), transparent),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(var(--accent-2-rgb), 0.06), transparent);
 }
 
 .kicker {

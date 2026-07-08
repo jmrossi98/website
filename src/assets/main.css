@@ -1,8 +1,59 @@
-:root {
-  /* Solarpunk: dark, near-black with a faint green undertone (a greenhouse at
-     night, not a corporate navy) with leaf-green as the primary accent and
-     warm sunbeam gold as the secondary accent. */
+/* Theme variables. Default (no data-theme attribute yet, e.g. pre-hydration)
+   and [data-theme="ff"] both resolve to the FF1 NES-menu-box look.
+   [data-theme="teal"] and [data-theme="solarpunk"] are opt-in via the
+   theme switcher in the navbar; selection is persisted to localStorage. */
+:root,
+:root[data-theme='ff'] {
+  --bg: #05070f;
+  --bg-rgb: 5, 7, 15;
+  --bg-elevated: #0b1230;
+  --surface: rgba(35, 46, 130, 0.55);
+  --border: rgba(217, 226, 255, 0.55);
+  --text: #eef2ff;
+  --text-muted: #93a4d9;
+  --heading: #ffffff;
+  --accent: #4fd8ff;
+  --accent-rgb: 79, 216, 255;
+  --accent-soft: rgba(79, 216, 255, 0.16);
+  --accent-hover: #8ce9ff;
+  --accent-2: #ffcf4d;
+  --accent-2-rgb: 255, 207, 77;
+  --accent-2-soft: rgba(255, 207, 77, 0.16);
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+  --nav-height: 72px;
+  --radius: 3px;
+  --container: 1080px;
+}
+
+/* Teal: the site's original dark navy/teal look, from before the solarpunk
+   redesign. Secondary accent uses the same warm gold as the other two
+   themes instead of the indigo it originally had. */
+:root[data-theme='teal'] {
+  --bg: #0a1120;
+  --bg-rgb: 10, 17, 32;
+  --bg-elevated: #101a30;
+  --surface: rgba(148, 163, 184, 0.06);
+  --border: rgba(148, 163, 184, 0.14);
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --heading: #f1f5f9;
+  --accent: #2dd4bf;
+  --accent-rgb: 45, 212, 191;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-hover: #5eead4;
+  --accent-2: #fbbf24;
+  --accent-2-rgb: 251, 191, 36;
+  --accent-2-soft: rgba(251, 191, 36, 0.14);
+  --radius: 12px;
+}
+
+/* Solarpunk: dark, near-black with a faint green undertone (a greenhouse at
+   night, not a corporate navy) with leaf-green as the primary accent and
+   warm sunbeam gold as the secondary accent. */
+:root[data-theme='solarpunk'] {
   --bg: #070d09;
+  --bg-rgb: 7, 13, 9;
   --bg-elevated: #0c1611;
   --surface: rgba(163, 184, 168, 0.06);
   --border: rgba(163, 184, 168, 0.14);
@@ -10,16 +61,13 @@
   --text-muted: #93a397;
   --heading: #f1f5ef;
   --accent: #4ade80;
+  --accent-rgb: 74, 222, 128;
   --accent-soft: rgba(74, 222, 128, 0.12);
-  /* Second accent - warm sunbeam gold, used for terminal/hacker accent details
-     (blinking cursor, glitch hover, status badges) alongside the leaf-green core. */
+  --accent-hover: #86efac;
   --accent-2: #fbbf24;
+  --accent-2-rgb: 251, 191, 36;
   --accent-2-soft: rgba(251, 191, 36, 0.14);
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
-  --nav-height: 72px;
   --radius: 12px;
-  --container: 1080px;
 }
 
 * {
@@ -81,6 +129,18 @@ section {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Section scaffolding */
 .section {
   padding: clamp(64px, 10vw, 96px) 0;
@@ -133,7 +193,7 @@ section {
 }
 
 .btn-primary:hover {
-  background: #86efac;
+  background: var(--accent-hover);
 }
 
 .btn-outline {
@@ -157,7 +217,7 @@ section {
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(74, 222, 128, 0.4);
+  border-color: rgba(var(--accent-rgb), 0.4);
 }
 
 /* Chips */
@@ -251,6 +311,24 @@ section {
   100% {
     transform: translate(0);
   }
+}
+
+/* FF: swap the soft glassy card/button treatment for a crisp, opaque
+   NES-dialog-box feel - thicker border, no blur, square-ish corners
+   (via --radius above), pill chips squared off to match. */
+:root:not([data-theme]) .card,
+[data-theme='ff'] .card {
+  border-width: 2px;
+  backdrop-filter: none;
+}
+
+:root:not([data-theme]) .chip,
+:root:not([data-theme]) input,
+:root:not([data-theme]) textarea,
+[data-theme='ff'] .chip,
+[data-theme='ff'] input,
+[data-theme='ff'] textarea {
+  border-radius: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

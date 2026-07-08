@@ -10,6 +10,19 @@
     />
     <meta name="author" content="Jakob Rossi" />
     <meta name="theme-color" content="#0a1120" />
+    <script>
+      // Apply the saved theme before first paint so switching themes doesn't
+      // flash the default on reload. Keep 'site-theme', the valid theme list,
+      // and 'ff' in sync with src/theme.js and ThemeSwitcher.vue - a saved
+      // value from a renamed/removed theme (e.g. an old 'dark-blue' or
+      // 'black-mage') falls back to the default instead of applying an
+      // attribute nothing matches.
+      (function () {
+        var valid = ['ff', 'teal', 'solarpunk']
+        var saved = localStorage.getItem('site-theme')
+        document.documentElement.setAttribute('data-theme', valid.indexOf(saved) !== -1 ? saved : 'ff')
+      })()
+    </script>
     <link rel="icon" href="https://jmrossi98-personal-content.s3.amazonaws.com/images/pc1.png" />
     <link rel="apple-touch-icon" href="https://jmrossi98-personal-content.s3.amazonaws.com/images/pc1.png" />
 
