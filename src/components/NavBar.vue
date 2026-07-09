@@ -91,13 +91,28 @@ onBeforeUnmount(() => {
   width: 100%;
   z-index: 100;
   height: var(--nav-height);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar.scrolled {
+/* The blur/tint lives on ::before, not .navbar itself, so .navbar never
+   gets backdrop-filter directly on it - that property creates a new
+   containing block for fixed-position descendants, which would trap the
+   mobile .nav-links overlay inside the navbar's own (short) box instead of
+   letting it cover the viewport. */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background: rgba(var(--bg-rgb), 0.85);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px -10px rgba(2, 6, 15, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar.scrolled::before {
+  opacity: 1;
 }
 
 .nav-inner {
