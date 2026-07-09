@@ -1,13 +1,14 @@
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { profile } from '../content.js'
+import { goToSection } from '../router.js'
 import ThemeSwitcher from './ThemeSwitcher.vue'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', id: 'about' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Contact', id: 'contact' },
 ]
 
 const menuOpen = ref(false)
@@ -30,7 +31,7 @@ onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting) activeSection.value = `#${entry.target.id}`
+        if (entry.isIntersecting) activeSection.value = entry.target.id
       }
     },
     { rootMargin: '-40% 0px -55% 0px' }
@@ -47,7 +48,7 @@ onBeforeUnmount(() => {
 <template>
   <header class="navbar" :class="{ scrolled }">
     <nav class="container nav-inner" aria-label="Primary">
-      <a href="#" class="logo" @click="menuOpen = false">
+      <a href="/" class="logo" @click="menuOpen = false; goToSection(null, $event)">
         <span class="glitch-hover" :data-text="profile.name">{{ profile.name }}</span>
         <img :src="profile.blackMage" alt="" class="logo-mage" />
       </a>
@@ -62,11 +63,11 @@ onBeforeUnmount(() => {
       </button>
 
       <ul class="nav-links" :class="{ open: menuOpen }">
-        <li v-for="(link, i) in links" :key="link.href">
+        <li v-for="(link, i) in links" :key="link.id">
           <a
-            :href="link.href"
-            :class="{ active: activeSection === link.href }"
-            @click="menuOpen = false"
+            :href="`/${link.id}`"
+            :class="{ active: activeSection === link.id }"
+            @click="menuOpen = false; goToSection(link.id, $event)"
           >
             <span class="index">0{{ i + 1 }}.</span> {{ link.label }}
           </a>
