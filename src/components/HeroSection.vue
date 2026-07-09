@@ -1,5 +1,6 @@
 <script setup>
 import { profile } from '../content.js'
+import { goToSection } from '../router.js'
 import IconGithub from './icons/IconGithub.vue'
 import IconLinkedin from './icons/IconLinkedin.vue'
 </script>
@@ -17,7 +18,7 @@ import IconLinkedin from './icons/IconLinkedin.vue'
         >. {{ profile.tagline }}
       </p>
       <div class="actions">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="/projects" class="btn btn-primary" @click="goToSection('projects', $event)">View My Work</a>
         <a :href="profile.resumeUrl" target="_blank" rel="noopener" class="btn btn-outline">
           Download Resume
         </a>
