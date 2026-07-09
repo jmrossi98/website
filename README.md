@@ -1,19 +1,41 @@
-# My Portfolio Website
+# jakobrossi.com
 
-This project was developed by Jakob Rossi using Javascript, React and NodeJS.
+Personal portfolio site for Jakob Rossi, built with Vue 3 and Vite.
 
 ## Getting Started
 
-Make sure you have NodeJS installed.
+Make sure you have Node.js installed (the deploy workflow uses Node 22).
 
-First, in the project directory, run:
+Install dependencies:
 
 ### `npm install`
 
-This will install all dependencies for the website.
+Run a local dev server with hot reload:
 
-If you'd like to run the website on a local instance, run:
+### `npm run dev`
+
+Build for production and preview the built site:
 
 ### `npm start`
+
+Runs a production build, then starts the dev server.
+
+### `npm run build`
+
+Builds the site to `build/`.
+
+### `npm run preview`
+
+Serves the production build locally.
+
+## Deployment
+
+Pushes to `master` trigger `.github/workflows/deploy.yml`, which builds the site and
+deploys it to GitHub Pages. The custom domain (`jakobrossi.com`) is fronted by an AWS
+CloudFront distribution, which also handles clean/pretty section URLs (e.g.
+`/experience` instead of `/index.html#experience`) via a CloudFront Function that
+falls back to `index.html` for unknown paths.
+
+## Contact
 
 If you'd like to reach out, send an email to jmrossi98@gmail.com.
