@@ -1,5 +1,5 @@
 <script setup>
-import { projects } from '../content.js'
+import { projects, openSource } from '../content.js'
 import IconExternal from './icons/IconExternal.vue'
 </script>
 
@@ -7,6 +7,36 @@ import IconExternal from './icons/IconExternal.vue'
   <section id="projects" class="section" v-reveal>
     <div class="container">
       <h2 class="section-title"><span class="index">03.</span> Projects</h2>
+
+      <div class="divider">
+        <span>Open Source Contributions</span>
+      </div>
+
+      <ul class="contrib-list">
+        <li v-for="contribution in openSource" :key="contribution.link">
+          <a :href="contribution.link" target="_blank" rel="noopener" class="card contrib">
+            <div class="contrib-header">
+              <div>
+                <p class="repo">{{ contribution.project }}</p>
+                <h3>{{ contribution.title }}</h3>
+              </div>
+              <div class="meta">
+                <p class="date">{{ contribution.date }}</p>
+                <IconExternal class="ext" />
+              </div>
+            </div>
+            <p class="description">{{ contribution.description }}</p>
+            <div class="chips">
+              <span v-for="t in contribution.tech" :key="t" class="chip">{{ t }}</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="divider">
+        <span>Personal Projects</span>
+      </div>
+
       <div class="grid">
         <a
           v-for="(project, i) in projects"
@@ -147,6 +177,92 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 56px 0 24px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.section-title + .divider {
+  margin-top: 0;
+}
+
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.contrib-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contrib {
+  display: block;
+  padding: 24px 28px;
+  color: inherit;
+}
+
+.contrib-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.repo {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.contrib h3 {
+  font-size: 1.1rem;
+}
+
+.contrib:hover h3 {
+  color: var(--accent);
+}
+
+.contrib .meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contrib .date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.contrib:hover .ext {
+  color: var(--accent);
+}
+
+.contrib .description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+.contrib .chips {
+  margin-top: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {

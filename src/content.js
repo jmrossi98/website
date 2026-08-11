@@ -76,6 +76,29 @@ export const experience = [
   },
 ]
 
+export const openSource = [
+  {
+    project: 'CPython',
+    repo: 'python/cpython',
+    title: 'Use a selector event loop in the happy-eyeballs tests',
+    description:
+      'Fixed a Windows-only asyncio test failure by tracing it to the default proactor event loop registering mocked sockets with a real I/O completion port, then switching the tests to a selector event loop to match the platform-independent code path they actually exercise.',
+    date: 'Jul 2026',
+    link: 'https://github.com/python/cpython/pull/153375',
+    tech: ['Python', 'asyncio'],
+  },
+  {
+    project: 'Mullvad VPN',
+    repo: 'mullvad/mullvadvpn-app',
+    title: 'Fix invisible switches in Windows high contrast mode',
+    description:
+      "Diagnosed why the desktop app's custom-styled toggle switches disappeared under Windows forced-colors mode and fixed it by opting the app root out of the OS color override, preserving the app's own accessible theme.",
+    date: 'Jul 2026',
+    link: 'https://github.com/mullvad/mullvadvpn-app/pull/10731',
+    tech: ['TypeScript', 'React', 'Electron'],
+  },
+]
+
 export const education = {
   school: 'Rochester Institute of Technology',
   degree: 'B.S. Software Engineering',
