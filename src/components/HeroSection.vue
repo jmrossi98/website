@@ -12,10 +12,9 @@ import IconLinkedin from './icons/IconLinkedin.vue'
         <span aria-hidden="true">&gt;</span> whoami<span class="terminal-cursor"></span>
       </p>
       <h1 class="glitch-hover" :data-text="profile.name">{{ profile.name }}</h1>
-      <h2>I build software that ships and scales</h2>
+      <h2>Engineer working across the stack.</h2>
       <p class="tagline">
-        {{ profile.title }} at <strong>{{ profile.company }}</strong
-        >. {{ profile.tagline }}
+        {{ profile.tagline }}
       </p>
       <div class="actions">
         <a href="/projects" class="btn btn-primary" @click="goToSection('projects', $event)">View My Work</a>
