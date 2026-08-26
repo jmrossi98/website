@@ -1,42 +1,63 @@
-// Client-side "routing" for a one-page site: nav links get clean paths like
-// /experience instead of #experience, without ever leaving index.html.
+// Client-side routing via vue-router. Section paths (/about, /experience, ...)
+// all render the same HomePage; the afterEach hook below smooth-scrolls to
+// the matching anchor, preserving the "one page, clean paths" feel this site
+// had before the blog needed real per-page routes.
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from './components/HomePage.vue'
+import BlogListPage from './components/BlogListPage.vue'
+import BlogPostPage from './components/BlogPostPage.vue'
+
 export const SECTION_IDS = ['about', 'experience', 'projects', 'contact']
 
-function scrollToId(id, behavior) {
-  document.getElementById(id)?.scrollIntoView({ behavior })
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual'
 }
 
-function pathToSection(pathname) {
-  const clean = pathname.replace(/^\/+|\/+$/g, '')
-  return SECTION_IDS.includes(clean) ? clean : null
+function resolveLegacyIndexHtml(to) {
+  // Canonicalize legacy /index.html (and /index.html#section) URLs, e.g.
+  // from old links/bookmarks, to the clean path equivalent.
+  const legacySection = to.hash.replace('#', '')
+  return SECTION_IDS.includes(legacySection) ? `/${legacySection}` : '/'
 }
 
-// Used by nav/hero links: updates the URL without a page reload, then scrolls.
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', name: 'home', component: HomePage, meta: { home: true } },
+    ...SECTION_IDS.map((id) => ({ path: `/${id}`, name: id, component: HomePage, meta: { home: true } })),
+    { path: '/blog', name: 'blog', component: BlogListPage },
+    { path: '/blog/:slug', name: 'post', component: BlogPostPage },
+    { path: '/index.html', redirect: resolveLegacyIndexHtml },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
+  ],
+})
+
+// vue-router's own `scrollBehavior` option scrolls via `window.scrollTo`,
+// which some browser extensions (ad/tracker/"scroll-jacking" blockers)
+// silently no-op - `Element.scrollIntoView` isn't affected by those, so we
+// drive scrolling ourselves here instead of using that option.
+router.afterEach((to, from) => {
+  const behavior = from.name ? 'smooth' : 'auto'
+  const targetId = SECTION_IDS.includes(to.path.slice(1)) ? to.path.slice(1) : null
+
+  // Wait for webfonts (layout-shifting via font-display: swap) and a beat
+  // for layout to settle before measuring, or the scroll can land mid-reflow.
+  // Deliberately setTimeout, not requestAnimationFrame: rAF is paused for
+  // backgrounded/inactive tabs, which would delay this indefinitely.
+  const fontsReady = document.fonts?.ready ?? Promise.resolve()
+  fontsReady.then(() => {
+    setTimeout(() => {
+      const target = targetId ? document.getElementById(targetId) : document.body
+      target?.scrollIntoView({ behavior, block: 'start' })
+    }, 50)
+  })
+})
+
+// Used by NavBar/Hero links: navigates to a section (or home); afterEach
+// above handles the smooth scroll.
 export function goToSection(id, event) {
   event?.preventDefault()
-  window.history.pushState(null, '', id ? `/${id}` : '/')
-  if (id) scrollToId(id, 'smooth')
-  else window.scrollTo({ top: 0, behavior: 'smooth' })
+  router.push(id ? `/${id}` : '/')
 }
 
-export function initRouter() {
-  const { pathname, hash, search } = window.location
-
-  // Canonicalize legacy /index.html (and /index.html#section) URLs, e.g. from
-  // old links/bookmarks, to the clean path equivalent.
-  if (pathname === '/index.html' || pathname === '/index.html/') {
-    const legacySection = hash.replace('#', '')
-    const nextPath = SECTION_IDS.includes(legacySection) ? `/${legacySection}` : '/'
-    window.history.replaceState(null, '', nextPath + search)
-  }
-
-  // Deep link: jump to the section matching the current path on first load.
-  const initial = pathToSection(window.location.pathname)
-  if (initial) requestAnimationFrame(() => scrollToId(initial, 'auto'))
-
-  window.addEventListener('popstate', () => {
-    const section = pathToSection(window.location.pathname)
-    if (section) scrollToId(section, 'smooth')
-    else window.scrollTo({ top: 0, behavior: 'smooth' })
-  })
-}
+export default router

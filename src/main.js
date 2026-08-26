@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { initRouter } from './router.js'
+import router from './router.js'
 import './assets/main.css'
 
 const app = createApp(App)
+app.use(router)
 
 // v-reveal: fade sections in as they enter the viewport
 app.directive('reveal', {
@@ -23,4 +24,3 @@ app.directive('reveal', {
 })
 
 app.mount('#app')
-initRouter()
