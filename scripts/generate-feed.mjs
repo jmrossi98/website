@@ -4,7 +4,7 @@
 // direct hits/refreshes on deep links like /blog/some-post. Reads the same
 // post markdown files/frontmatter shape as src/lib/posts.js, since Vite's
 // import.meta.glob isn't available here.
-import { readdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { parseFrontmatter } from '../src/lib/frontmatter.js'
@@ -20,7 +20,7 @@ function escapeXml(str) {
 
 const now = new Date()
 
-const posts = readdirSync(postsDir)
+const posts = (existsSync(postsDir) ? readdirSync(postsDir) : [])
   .filter((f) => f.endsWith('.md'))
   .map((file) => {
     const raw = readFileSync(path.join(postsDir, file), 'utf-8')
