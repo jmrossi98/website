@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import BlogListPage from './components/BlogListPage.vue'
 import BlogPostPage from './components/BlogPostPage.vue'
+import { reportVisit } from './lib/visits.js'
 
 export const SECTION_IDS = ['about', 'experience', 'projects', 'contact']
 
@@ -51,6 +52,17 @@ router.afterEach((to, from) => {
       target?.scrollIntoView({ behavior, block: 'start' })
     }, 50)
   })
+})
+
+// Visit reporting. Its own hook rather than folded into the scroll one above,
+// which defers its work until webfonts have loaded -- a visit should be
+// reported when it happens, not when the page finishes settling.
+//
+// afterEach, so client-side navigations count too. Without this the site would
+// only ever report the first load, and moving between /blog and /blog/:slug --
+// which is most of the reading on this site -- would be invisible.
+router.afterEach((to) => {
+  reportVisit(to.fullPath)
 })
 
 // Used by NavBar/Hero links: navigates to a section (or home); afterEach
