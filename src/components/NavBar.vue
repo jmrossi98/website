@@ -1,5 +1,6 @@
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 import { profile } from '../content.js'
 import { goToSection } from '../router.js'
 import ThemeSwitcher from './ThemeSwitcher.vue'
@@ -9,11 +10,19 @@ const links = [
   { label: 'Experience', id: 'experience' },
   { label: 'Projects', id: 'projects' },
   { label: 'Contact', id: 'contact' },
+  { label: 'Blog', id: 'blog' },
 ]
 
+const route = useRoute()
 const menuOpen = ref(false)
 const scrolled = ref(false)
-const activeSection = ref('')
+const observedSection = ref('')
+
+// On home-ish routes, highlight whichever section is in view. Elsewhere
+// (e.g. /blog), highlight based on the route itself.
+const activeSection = computed(() =>
+  route.meta.home ? observedSection.value : route.path.startsWith('/blog') ? 'blog' : ''
+)
 
 const onScroll = () => {
   scrolled.value = window.scrollY > 20
@@ -26,17 +35,34 @@ watch(menuOpen, (open) => {
 
 let observer
 
-onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true })
+function observeSections() {
+  observer?.disconnect()
   observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting) activeSection.value = entry.target.id
+        if (entry.isIntersecting) observedSection.value = entry.target.id
       }
     },
     { rootMargin: '-40% 0px -55% 0px' }
   )
   document.querySelectorAll('main section[id]').forEach((el) => observer.observe(el))
+}
+
+// HomePage (and its section elements) mounts/unmounts as the router swaps
+// pages, so the observer has to be rebuilt each time we land back on it.
+watch(
+  () => route.meta.home,
+  async (isHome, wasHome) => {
+    if (isHome && !wasHome) {
+      await nextTick()
+      observeSections()
+    }
+  }
+)
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll, { passive: true })
+  if (route.meta.home) observeSections()
 })
 
 onBeforeUnmount(() => {

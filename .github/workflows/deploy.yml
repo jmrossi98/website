@@ -4,6 +4,10 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  # Rebuild daily so posts scheduled via frontmatter `publishAt` go live on
+  # their own, without needing a manual push once that time passes.
+  schedule:
+    - cron: '0 13 * * *'
 
 permissions:
   contents: read
