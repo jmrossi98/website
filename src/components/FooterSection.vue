@@ -21,17 +21,6 @@ const year = new Date().getFullYear()
       </a>
     </div>
     <p>© {{ year }} {{ profile.name }} · Built with Vue</p>
-    <!--
-      Visits are logged with IP addresses, which are personal data under GDPR,
-      so the site says so rather than logging silently. Not a cookie banner:
-      no cookie is set and nothing is shared with a third party, so there is
-      nothing to ask consent for -- this is disclosure, which is the part that
-      is actually required.
-    -->
-    <p class="privacy">
-      Page visits are logged (IP address, country, page, referrer and browser)
-      for 90 days, to my own server. No cookies, no third-party analytics.
-    </p>
   </footer>
 </template>
 
@@ -67,17 +56,5 @@ p {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
-}
-
-.privacy {
-  margin-top: 8px;
-  font-size: 0.7rem;
-  /* Deliberately quiet, but not hidden: a disclosure nobody can read is not a
-     disclosure. Kept above the muted text colour's own contrast, not below. */
-  opacity: 0.75;
-  max-width: 46ch;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
 }
 </style>
